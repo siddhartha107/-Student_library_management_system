@@ -115,5 +115,16 @@ public class TransactionService {
 
         return "Book issued successfully";
 
+
+    }
+
+
+    public String getTransactions(int bookId, int cardId){
+
+        List<Transactions> transactionsList = transactionRepository.getTransactionsForBookAndCard(bookId,cardId);
+
+        String transactionId = transactionsList.get(0).getTransactionId();
+        
+        return transactionId;
     }
 }
